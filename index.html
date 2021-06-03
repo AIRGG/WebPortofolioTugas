@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Roboto, Helvetica Neue, sans-serif;
+        }
+        .navbar{
+            display: flex;
+            flex: 1;
+            /*background-color: beige;*/
+            box-shadow: 0px 0px 5px lightgrey;
+        }
+        .navbar .menu {
+            flex: 1;
+            text-align: right;
+            /*background-color: red;*/
+        }
+        .navbar ul{
+            margin-top: 5%;
+        }
+        .navbar li a{
+            text-align: center;
+            text-decoration: none;
+            color: grey;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .navbar li a:hover{
+            color: grey;
+        }
+        .navbar li{
+            list-style: none;
+            display: inline;
+            margin-right: 25px;
+        }
+        .navbar li.active{
+            border-bottom: 2px solid grey;
+        }
+        .navbar .logo{
+            flex: 1;
+        }
+        .navbar .logo img{
+            padding: 10px;
+            width: 100px;
+            height: auto;
+        }
+
+        .container{
+            display: grid;
+            /*background-color: blue;*/
+        }
+        .container .kontenatas{
+            display: grid;
+            grid-template-columns: auto auto;
+            height: 300px;
+        }
+        .container .kontentengah{
+            display: grid;
+            grid-template-columns: auto auto;
+            height: 300px;
+            margin-top: 100px;
+        }
+        .container .kontenatas .kontenkiri{
+            margin-top: 25%;
+        }
+        .kontenkiri, .kontenkanan{
+            margin-top: 12%;
+            margin-left: 70px;
+        }
+        .kontenkiri h1, .kontenkiri p, .kontenkanan h1, .kontenkanan p{
+            padding: 0;
+            margin: 0;
+        }
+        .kontenkiri p, .kontenkanan p{
+            font-size: 20px;
+        }
+        .kontenkiri button, .kontenkanan button{
+            background-color: gold;
+            border: 0;
+            padding: 10px;
+            margin-top: 20px;
+            font-weight: bold;
+            color: white;
+            border-radius: 7px;
+        }
+        .kontenkiri button:hover, .kontenkanan button:hover{
+            opacity: 50%;
+            cursor: pointer;
+        }
+
+        .kontenkanan img, .kontenkiri img{
+            width: auto;
+            height: 340px;
+        }
+
+        .kontenkanan button.facebook{
+            background-color: #1977f3 !important;
+        }
+        .kontenkanan button.github{
+            background-color: #1f1e1e !important;
+        }
+        .kontenkanan button.linkedin{
+            background-color: #0173af !important;
+        }
+
+        .container .galeri{
+            display: grid;
+            height: 300px;
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .container .galeri .galeriimg img{
+            height: 200px;
+            width: auto;
+            display: block;
+            text-align: center;
+        }
+        .container .galeri .galeriimg{
+            display: grid;
+            grid-template-columns: auto auto auto;
+
+            text-align: center;
+        }
+
+        .container .galeri {
+            justify-items: center;
+        }
+
+        .container .copyright{
+            display: grid;
+            margin-top: 20%;
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body style="background-color: aliceblue">
+    <div class="navbar">
+        <div class="logo">
+            <img src="img/logo-angga-print.png" alt="Logo">
+        </div>
+        <div class="menu">
+            <ul>
+                <li class="active">
+                    <a href="#home">Home</a>
+                </li>
+                <li>
+                    <a href="#about">About</a>
+                </li>
+                <li>
+                    <a href="#gallery">Gallery</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container" id="home">
+        <div class="kontenatas">
+            <div class="kontenkiri">
+                <h1>Welcome to My Website</h1>
+                <p>I hope you enjoy, and dont forget to Concact Me</p>
+                <button onclick="afterClick()">Contact me</button>
+            </div>
+            <div class="kontenkanan">
+                <img src="img/macan.jpg" alt="logokanan">
+            </div>
+        </div>
+    </div>
+    <div class="container" id="about">
+        <div class="kontentengah">
+            <div class="kontenkiri">
+                <img src="img/penguin.png" alt="logokiri">
+            </div>
+            <div class="kontenkanan">
+                <h1>About me</h1>
+                <p>Hello my name is penguin, i like to swim, eat fish and sleep</p>
+                <p>I Live in Antartica, i have organization to in Artic</p>
+                <p>Get in touch with me</p>
+                <button onclick="afterClick('https://www.facebook.com/Angga.AIRGG')" class="facebook">Facebook</button>
+                <button onclick="afterClick()" class="github">Github</button>
+                <button onclick="afterClick('https://www.linkedin.com/in/airlangga-yudiatama/')" class="linkedin">LinkedIn</button>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="gallery">
+        <div class="galeri">
+            <h1>Gallery</h1>
+            <div class="galeriimg">
+                <img src="img/macan.jpg" alt="galerimacan">
+                <img src="img/macan.jpg" alt="galerimacan">
+                <img src="img/macan.jpg" alt="galerimacan">
+                <img src="img/macan.jpg" alt="galerimacan">
+                <img src="img/macan.jpg" alt="galerimacan">
+                <img src="img/macan.jpg" alt="galerimacan">
+            </div>
+        </div>
+    </div>
+    <div class="container" id="gallery">
+        <div class="copyright">
+            <p>
+                &copy; Copyright <a href="https://github.com/AIRGG" target="_blank">AIRGG</a>. ALl Right Reserved 2021.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const afterClick = (url) => window.open(url || 'https://github.com/AIRGG', '_blank').focus();
+    </script>
+</body>
+</html>
